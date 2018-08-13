@@ -300,34 +300,25 @@
       
         
           
-            <h2 id="常规方式"><a href="#常规方式" class="headerlink" title="常规方式"></a>常规方式</h2><ul>
-<li><p>打开Terminal，输入<code>sc delete [serverName]</code>删除MySQL服务</p>
-<blockquote>
-<p>如果上述方法无法删除MySQL服务，则直接进入终极方法</p>
-</blockquote>
-</li>
-<li><p>如果是<code>msi</code>方式安装，则在 <code>控制面板 &gt; 所有控制面板项 &gt; 程序和功能</code> 卸载MySQL</p>
-</li>
-<li><p>删除MySQL相关文件及文件夹</p>
-</li>
-<li><p>进入注册表删除MySQL相关内容</p>
-</li>
-</ul>
-<h2 id="终极方法"><a href="#终极方法" class="headerlink" title="终极方法"></a>终极方法</h2><ul>
-<li><p>通过任务管理器进入服务，关闭MySQL服务并禁用</p>
-</li>
-<li><p>进入注册表，删除以下文件夹</p>
-<blockquote>
-<p><code>HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\Eventlog\Application\MySQL</code></p>
-<p><code>HKEY_LOCAL_MACHINE\SYSTEM\ControlSet002\Services\Eventlog\Application\MySQL</code></p>
-<p><code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Eventlog\Application\MySQL</code></p>
-</blockquote>
-</li>
-<li><p>删除<code>C:\ProgramData\MySQL</code>文件夹，或者用<code>Everything</code>搜索<code>MySQL</code>将相关文件删除【切勿乱删】</p>
-</li>
-</ul>
+          常规方式
+打开Terminal，输入sc delete [serverName]删除MySQL服务
 
-          
+如果上述方法无法删除MySQL服务，则直接进入终极方法
+
+
+如果是msi方式安装，则在 控制面板 &gt; 所有控制面板项 &gt; 程序和功能 卸载MySQL
+
+删除MySQL相关文件及文件夹
+
+
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/13/MySQL卸载/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -431,6 +422,16 @@
           
 
           
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Air-TF" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
 
           
           
@@ -467,17 +468,13 @@
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
-  <span class="post-meta-divider">|</span>
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
-
-
+  <div class="footer-custom">Made with <a target="_blank" style="border:0" href="https://weibo.com/u/5148709268?from=usercardnew&refer_flag=0000020001_&is_all=1">Wong Xueyi</a></div>
 
 
         

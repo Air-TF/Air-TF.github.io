@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Air">
 <meta property="og:description" content="hexo插入图片插入图片有在线和本地两种方式，这里先说本地解决方案 修改配置文件打开_config.yml文件，查找post_asset_folder属性，并设置为true  当post_asset_folder参数设置为true后，在建立文件时，Hexo 会自动建立一个与文章同名的文件夹，可以把与该文章相关的所有资源都放到那个文件夹，方便使用资源。   安装图片路径转换插件安装hexo-asse">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-17T09:39:28.385Z">
+<meta property="og:updated_time" content="2018-08-18T12:12:21.424Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo踩坑记">
 <meta name="twitter:description" content="hexo插入图片插入图片有在线和本地两种方式，这里先说本地解决方案 修改配置文件打开_config.yml文件，查找post_asset_folder属性，并设置为true  当post_asset_folder参数设置为true后，在建立文件时，Hexo 会自动建立一个与文章同名的文件夹，可以把与该文章相关的所有资源都放到那个文件夹，方便使用资源。   安装图片路径转换插件安装hexo-asse">
@@ -292,6 +292,11 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
 
           
 
@@ -350,6 +355,17 @@
 <script type="math/tex; mode=display">
 P(x)=\sum_{k=1}^nf(x_k)l_k(x)</script><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><a href="http://www.haoloverongrong.top/2018/07/23/hexo_LeTex1/" target="_blank" rel="noopener">使用LaTex添加公式到Hexo博客里 </a></p>
 <p><a href="https://blog.csdn.net/crazy_scott/article/details/79293576" target="_blank" rel="noopener">hexo下LaTeX无法显示的解决方案</a></p>
+<h2 id="hexo-博客加密"><a href="#hexo-博客加密" class="headerlink" title="hexo 博客加密"></a>hexo 博客加密</h2><p>安装<a href="https://github.com/MikeCoder/hexo-blog-encrypt" target="_blank" rel="noopener"><strong>hexo-blog-encrypt</strong> </a>插件即可实现博客加密功能</p>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><blockquote>
+<p>具体配置方法参照官网</p>
+</blockquote>
+<h3 id="可能遇到的问题"><a href="#可能遇到的问题" class="headerlink" title="可能遇到的问题"></a>可能遇到的问题</h3><ul>
+<li><p>创新博客报<code>(node:16132) [DEP0061] DeprecationWarning: fs.SyncWriteStream is deprecated.</code>警告</p>
+<blockquote>
+<p>如果是安装该插件之后才有的警告，请打开官网，安装最新版本</p>
+</blockquote>
+</li>
+</ul>
 <h2 id="hexo奇葩坑"><a href="#hexo奇葩坑" class="headerlink" title="hexo奇葩坑"></a>hexo奇葩坑</h2><p>hexo和Typora相同的<code>.md</code>文件很可能显示出来的效果不相同，下面记录本人在使用过程中踩的一些坑</p>
 <h3 id="区块引用中添加代码块"><a href="#区块引用中添加代码块" class="headerlink" title="区块引用中添加代码块"></a>区块引用中添加代码块</h3><p>区块中添加代码块，如果markdown代码如下</p>
 <p>> 实例：<br>> ```python<br>> print(‘hello word!’)<br>> ```</p>
@@ -538,7 +554,7 @@ P(x)=\sum_{k=1}^nf(x_k)l_k(x)</script><h3 id="参考资料"><a href="#参考资�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo插入图片"><span class="nav-number">1.</span> <span class="nav-text">hexo插入图片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改配置文件"><span class="nav-number">1.1.</span> <span class="nav-text">修改配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装图片路径转换插件"><span class="nav-number">1.2.</span> <span class="nav-text">安装图片路径转换插件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-插入公式"><span class="nav-number">2.</span> <span class="nav-text">hexo 插入公式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Kramed"><span class="nav-number">2.1.</span> <span class="nav-text">安装Kramed</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改文件配置"><span class="nav-number">2.2.</span> <span class="nav-text">更改文件配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装mathjax包"><span class="nav-number">2.3.</span> <span class="nav-text">安装mathjax包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新-Mathjax-的配置文件"><span class="nav-number">2.4.</span> <span class="nav-text">更新 Mathjax 的配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改默认转义规则"><span class="nav-number">2.5.</span> <span class="nav-text">更改默认转义规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开启mathjax"><span class="nav-number">2.6.</span> <span class="nav-text">开启mathjax</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用方法"><span class="nav-number">2.7.</span> <span class="nav-text">使用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料"><span class="nav-number">2.8.</span> <span class="nav-text">参考资料</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo奇葩坑"><span class="nav-number">3.</span> <span class="nav-text">hexo奇葩坑</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#区块引用中添加代码块"><span class="nav-number">3.1.</span> <span class="nav-text">区块引用中添加代码块</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo插入图片"><span class="nav-number">1.</span> <span class="nav-text">hexo插入图片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改配置文件"><span class="nav-number">1.1.</span> <span class="nav-text">修改配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装图片路径转换插件"><span class="nav-number">1.2.</span> <span class="nav-text">安装图片路径转换插件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-插入公式"><span class="nav-number">2.</span> <span class="nav-text">hexo 插入公式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Kramed"><span class="nav-number">2.1.</span> <span class="nav-text">安装Kramed</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改文件配置"><span class="nav-number">2.2.</span> <span class="nav-text">更改文件配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装mathjax包"><span class="nav-number">2.3.</span> <span class="nav-text">安装mathjax包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新-Mathjax-的配置文件"><span class="nav-number">2.4.</span> <span class="nav-text">更新 Mathjax 的配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改默认转义规则"><span class="nav-number">2.5.</span> <span class="nav-text">更改默认转义规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开启mathjax"><span class="nav-number">2.6.</span> <span class="nav-text">开启mathjax</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用方法"><span class="nav-number">2.7.</span> <span class="nav-text">使用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料"><span class="nav-number">2.8.</span> <span class="nav-text">参考资料</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-博客加密"><span class="nav-number">3.</span> <span class="nav-text">hexo 博客加密</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置"><span class="nav-number">3.1.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可能遇到的问题"><span class="nav-number">3.2.</span> <span class="nav-text">可能遇到的问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo奇葩坑"><span class="nav-number">4.</span> <span class="nav-text">hexo奇葩坑</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#区块引用中添加代码块"><span class="nav-number">4.1.</span> <span class="nav-text">区块引用中添加代码块</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -578,6 +594,26 @@ P(x)=\sum_{k=1}^nf(x_k)l_k(x)</script><h3 id="参考资料"><a href="#参考资�
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
 
 
 

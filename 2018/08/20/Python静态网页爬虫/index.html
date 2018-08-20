@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Python,爬虫," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="环境 WIndows 10 PyCharm 2018.2 Python 3.6  原理 详细过程图片较多，找到合适图床再补充，这里只是挖个坑  实例爬取爱奇艺视频列表源代码123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354from bs4 import">
+<meta name="keywords" content="Python,爬虫">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python静态网页爬虫">
+<meta property="og:url" content="http://yoursite.com/2018/08/20/Python静态网页爬虫/index.html">
+<meta property="og:site_name" content="Air">
+<meta property="og:description" content="环境 WIndows 10 PyCharm 2018.2 Python 3.6  原理 详细过程图片较多，找到合适图床再补充，这里只是挖个坑  实例爬取爱奇艺视频列表源代码123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354from bs4 import">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/08/20/Python静态网页爬虫/aiqiyi.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/20/Python静态网页爬虫/youku.png">
+<meta property="og:image" content="http://yoursite.com/2018/08/20/Python静态网页爬虫/dangdang.png">
+<meta property="og:updated_time" content="2018-08-20T03:54:26.983Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python静态网页爬虫">
+<meta name="twitter:description" content="环境 WIndows 10 PyCharm 2018.2 Python 3.6  原理 详细过程图片较多，找到合适图床再补充，这里只是挖个坑  实例爬取爱奇艺视频列表源代码123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354from bs4 import">
+<meta name="twitter:image" content="http://yoursite.com/2018/08/20/Python静态网页爬虫/aiqiyi.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/08/20/Python静态网页爬虫/"/>
+
+
+
+
+
+  <title>Python静态网页爬虫 | Air</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Air</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Notes</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/20/Python静态网页爬虫/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Air">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Air">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python静态网页爬虫</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-20T11:01:36+08:00">
+                2018-08-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
+<li>WIndows 10</li>
+<li>PyCharm 2018.2</li>
+<li>Python 3.6</li>
+</ul>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><blockquote>
+<p>详细过程图片较多，找到合适图床再补充，这里只是挖个坑</p>
+</blockquote>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><h3 id="爬取爱奇艺视频列表"><a href="#爬取爱奇艺视频列表" class="headerlink" title="爬取爱奇艺视频列表"></a>爬取爱奇艺视频列表</h3><h4 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> sqlite3</span><br><span class="line"></span><br><span class="line">url = <span class="string">'http://list.iqiyi.com/www/1/-------------24-1-1-iqiyi--.html'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getOnePage</span><span class="params">(url)</span>:</span></span><br><span class="line">    wb_data = requests.get(url)</span><br><span class="line">    time.sleep(<span class="number">3</span>)</span><br><span class="line">    soup = BeautifulSoup(wb_data.text, <span class="string">'lxml'</span>)</span><br><span class="line">    MessageList = soup.select(<span class="string">'div.wrapper-piclist &gt; ul &gt; li'</span>)</span><br><span class="line">    <span class="keyword">for</span> message <span class="keyword">in</span> MessageList:</span><br><span class="line">        title = message.select(<span class="string">'div.site-piclist_info &gt; div.mod-listTitle_left &gt; p &gt; a'</span>)[<span class="number">0</span>].get_text()</span><br><span class="line">        img = message.select(<span class="string">'div.site-piclist_pic &gt; a &gt; img'</span>)[<span class="number">0</span>].get(<span class="string">'data-original'</span>)</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            score = message.select(<span class="string">'div.site-piclist_info &gt; div.mod-listTitle_left &gt; span.score'</span>)[<span class="number">0</span>].get_text()</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            score = <span class="string">''</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            actors = <span class="string">" "</span>.join(list(message.select(<span class="string">'div.site-piclist_info &gt; div.role_info'</span>)[<span class="number">0</span>].stripped_strings)[<span class="number">1</span>:])</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            actors = <span class="string">''</span></span><br><span class="line">        sql = <span class="string">"insert into films(title,img,actors,score) values('%s','%s','%s','%s')"</span> % (</span><br><span class="line">            title, img, actors, score)</span><br><span class="line">        conn.execute(sql)</span><br><span class="line">        print(title, img, actors, score)</span><br><span class="line">    conn.commit()</span><br><span class="line"></span><br><span class="line">    NextPage = soup.find_all(attrs=&#123;<span class="string">"data-key"</span>: <span class="string">"down"</span>&#125;)</span><br><span class="line">    <span class="keyword">if</span> len(NextPage) &gt; <span class="number">0</span>:</span><br><span class="line">        NextPage = <span class="string">'http://list.iqiyi.com'</span> + NextPage[<span class="number">0</span>].get(<span class="string">'href'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> NextPage</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    conn = sqlite3.connect(<span class="string">"PythonTest.db"</span>)</span><br><span class="line">    print(<span class="string">'Opened database successfully'</span>)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        conn.execute(<span class="string">'''create table if not exists films(</span></span><br><span class="line"><span class="string">          ID integer PRIMARY KEY  AUTOINCREMENT,</span></span><br><span class="line"><span class="string">          title          text    NOT NULL,</span></span><br><span class="line"><span class="string">          img            text,</span></span><br><span class="line"><span class="string">          actors         text,</span></span><br><span class="line"><span class="string">          score          text);'''</span>)</span><br><span class="line">        print(<span class="string">'Table created successfully'</span>)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        print(<span class="string">"Create table failed"</span>)</span><br><span class="line">    <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">30</span>):</span><br><span class="line">        <span class="keyword">if</span> url.strip():</span><br><span class="line">            url = getOnePage(url)</span><br><span class="line">            print(<span class="string">'----------------------'</span>, x, <span class="string">'------------------------------'</span>)</span><br><span class="line">    conn.close()</span><br></pre></td></tr></table></figure>
+<h4 id="数据截图"><a href="#数据截图" class="headerlink" title="数据截图"></a>数据截图</h4><p><img src="/2018/08/20/Python静态网页爬虫/aiqiyi.png" alt=""></p>
+<h3 id="爬取优酷视频列表"><a href="#爬取优酷视频列表" class="headerlink" title="爬取优酷视频列表"></a>爬取优酷视频列表</h3><h4 id="源代码-1"><a href="#源代码-1" class="headerlink" title="源代码"></a>源代码</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> sqlite3</span><br><span class="line"></span><br><span class="line">url = <span class="string">'https://list.youku.com/category/show/c_96_a__s_1_d_1.html.html?spm=a2h1n.8251845.filterPanel.5!2~1~3~A'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getOnePage</span><span class="params">(url)</span>:</span></span><br><span class="line">    wb_data = requests.get(url)</span><br><span class="line">    time.sleep(random.randint(<span class="number">3</span>, <span class="number">5</span>))</span><br><span class="line">    soup = BeautifulSoup(wb_data.text, <span class="string">'lxml'</span>)</span><br><span class="line">    MessageList = soup.select(<span class="string">'div.box-series &gt; ul &gt; li'</span>)</span><br><span class="line">    <span class="keyword">for</span> message <span class="keyword">in</span> MessageList:</span><br><span class="line">        title = message.select(<span class="string">'li.title &gt; a'</span>)[<span class="number">0</span>].get_text()</span><br><span class="line">        img = message.select(<span class="string">'div.p-thumb &gt; img'</span>)[<span class="number">0</span>].get(<span class="string">'_src'</span>)</span><br><span class="line">        url = message.select(<span class="string">'div.p-thumb &gt; a'</span>)[<span class="number">0</span>].get(<span class="string">'href'</span>)</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            times = message.select(<span class="string">'li.actor'</span>)[<span class="number">0</span>].next_sibling.get_text()[:<span class="number">-4</span>]</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            times = <span class="string">''</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            actors = <span class="string">" "</span>.join(list(message.select(<span class="string">'li.actor'</span>)[<span class="number">0</span>].stripped_strings)[<span class="number">1</span>:])</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            actors = <span class="string">''</span></span><br><span class="line">        sql = <span class="string">"insert into films(title,img,url,actors,times) values('%s','%s','%s','%s','%s')"</span> % (</span><br><span class="line">            title, img, url, actors, times)</span><br><span class="line">        conn.execute(sql)</span><br><span class="line">        print(title, img, url, actors, times)</span><br><span class="line">    conn.commit()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        NextPage = <span class="string">'http:'</span> + soup.select(<span class="string">'li.next &gt; a'</span>)[<span class="number">0</span>].get(<span class="string">'href'</span>)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        NextPage = <span class="string">''</span></span><br><span class="line">        print(NextPage)</span><br><span class="line">    <span class="keyword">return</span> NextPage</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    conn = sqlite3.connect(<span class="string">"PythonTest2.db"</span>)</span><br><span class="line">    print(<span class="string">'Opened database successfully'</span>)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        conn.execute(<span class="string">'''create table if not exists films(</span></span><br><span class="line"><span class="string">          ID integer PRIMARY KEY  AUTOINCREMENT,</span></span><br><span class="line"><span class="string">          title          text    NOT NULL,</span></span><br><span class="line"><span class="string">          img            text,</span></span><br><span class="line"><span class="string">          url            text,</span></span><br><span class="line"><span class="string">          actors         text,</span></span><br><span class="line"><span class="string">          times          text);'''</span>)</span><br><span class="line">        print(<span class="string">'Table created successfully'</span>)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        print(<span class="string">"Create table failed"</span>)</span><br><span class="line">    <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">30</span>):</span><br><span class="line">        <span class="keyword">if</span> url.strip():</span><br><span class="line">            url = getOnePage(url)</span><br><span class="line">            print(<span class="string">'----------------------'</span>, x, <span class="string">'------------------------------'</span>)</span><br><span class="line">    conn.close()</span><br></pre></td></tr></table></figure>
+<h4 id="数据截图-1"><a href="#数据截图-1" class="headerlink" title="数据截图"></a>数据截图</h4><p><img src="/2018/08/20/Python静态网页爬虫/youku.png" alt=""></p>
+<h3 id="爬取当当书籍信息"><a href="#爬取当当书籍信息" class="headerlink" title="爬取当当书籍信息"></a>爬取当当书籍信息</h3><h4 id="源代码-2"><a href="#源代码-2" class="headerlink" title="源代码"></a>源代码</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> sqlite3</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">url = <span class="string">'http://search.dangdang.com/?key=%C8%CB%B9%A4%D6%C7%C4%DC&amp;category_path=01.00.00.00.00.00#J_tab'</span></span><br><span class="line"></span><br><span class="line">book_price_re =re.compile(<span class="string">'\d(\.\d)?'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getOnePage</span><span class="params">(url)</span>:</span></span><br><span class="line">    wb_data = requests.get(url)</span><br><span class="line">    time.sleep(random.randint(<span class="number">3</span>, <span class="number">5</span>))</span><br><span class="line">    soup = BeautifulSoup(wb_data.text, <span class="string">'html.parser'</span>)</span><br><span class="line">    bookList = soup.select(<span class="string">'div#search_nature_rg &gt; ul.bigimg &gt; li'</span>)</span><br><span class="line">    <span class="keyword">for</span> book <span class="keyword">in</span> bookList:</span><br><span class="line">        title = book.select(<span class="string">'p.name &gt; a'</span>)[<span class="number">0</span>].get_text()</span><br><span class="line">        imgUrl = book.select(<span class="string">'a &gt; img'</span>)[<span class="number">0</span>].get(<span class="string">'src'</span>)</span><br><span class="line">        <span class="keyword">if</span> imgUrl == <span class="string">'images/model/guan/url_none.png'</span>:</span><br><span class="line">            imgUrl = book.select(<span class="string">'a &gt; img'</span>)[<span class="number">0</span>].get(<span class="string">'data-original'</span>)</span><br><span class="line">        detail = book.select(<span class="string">'p.detail'</span>)[<span class="number">0</span>].get_text()</span><br><span class="line">        price = re.sub(<span class="string">r'[^0-9.]'</span>, <span class="string">""</span>, book.select(<span class="string">'p.price &gt; span.search_now_price'</span>)[<span class="number">0</span>].get_text())</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            discount = re.sub(<span class="string">r'[^0-9.]*'</span>, <span class="string">""</span>, book.select(<span class="string">'p.price &gt; span.search_discount'</span>)[<span class="number">0</span>].get_text())</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            discount = <span class="string">''</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            ebook = re.sub(<span class="string">r'[^0-9.]'</span>, <span class="string">""</span>, book.select(<span class="string">'p.price &gt; a.search_e_price &gt; i'</span>)[<span class="number">0</span>].get_text())</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            ebook = <span class="string">''</span></span><br><span class="line">        star = re.sub(<span class="string">r'[^0-9%]'</span>, <span class="string">""</span>, book.select(<span class="string">'p.search_star_line &gt; span.search_star_black &gt; span'</span>)[<span class="number">0</span>].get(<span class="string">'style'</span>))</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            author = book.select(<span class="string">'p.search_book_author &gt; span'</span>)[<span class="number">0</span>].get_text()</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            author = <span class="string">''</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            P_time = re.sub(<span class="string">r'[^0-9-]'</span>, <span class="string">""</span>, book.select(<span class="string">'p.search_book_author &gt; span'</span>)[<span class="number">1</span>].get_text())</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            P_time = <span class="string">''</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            P_cbs = re.sub(<span class="string">r'[^\u4e00-\u9fa5]'</span>, <span class="string">""</span>, book.select(<span class="string">'p.search_book_author &gt; span'</span>)[<span class="number">2</span>].get_text())</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            P_cbs = <span class="string">''</span></span><br><span class="line"></span><br><span class="line">        print(title, imgUrl, detail, price, discount, ebook, star, author, P_time, P_cbs)</span><br><span class="line">        <span class="comment"># sql = "insert into books(title,imgUrl,detail,price,discount,ebook,star,author,P_time,P_cbs)" \</span></span><br><span class="line">        <span class="comment">#       "values(&#123;&#125;,&#123;&#125;,&#123;&#125;,&#123;&#125;,&#123;&#125;,&#123;&#125;,&#123;&#125;,&#123;&#125;,&#123;&#125;,&#123;&#125;)".format(repr(title), repr(imgUrl), repr(detail), repr(price),</span></span><br><span class="line">        <span class="comment">#                                                      repr(discount), repr(ebook), repr(star), repr(author),</span></span><br><span class="line">        <span class="comment">#                                                      repr(P_time), repr(P_cbs))</span></span><br><span class="line">        <span class="comment"># '%s','%s','%s','%s','%s','%s','%s','%s','%s','%s'</span></span><br><span class="line">        sql = <span class="string">"insert into books(title,imgUrl,detail,price,discount,ebook,star,author,P_time,P_cbs) values(?,?,?,?,?,?,?,?,?,?)"</span></span><br><span class="line">        conn.execute(sql, (title, imgUrl, detail, price, discount, ebook, star, author, P_time, P_cbs))</span><br><span class="line">    conn.commit()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        NextPage = <span class="string">'http://search.dangdang.com'</span> + soup.select(<span class="string">'li.next &gt; a'</span>)[<span class="number">0</span>].get(<span class="string">'href'</span>)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        NextPage = <span class="string">''</span></span><br><span class="line">    print(NextPage)</span><br><span class="line">    <span class="keyword">return</span> NextPage</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    conn = sqlite3.connect(<span class="string">"PythonTest2.db"</span>)</span><br><span class="line">    print(<span class="string">'Opened database successfully'</span>)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        conn.execute(<span class="string">'''create table if not exists books(</span></span><br><span class="line"><span class="string">          ID integer PRIMARY KEY  AUTOINCREMENT,</span></span><br><span class="line"><span class="string">          title          text    NOT NULL,</span></span><br><span class="line"><span class="string">          imgUrl         text,</span></span><br><span class="line"><span class="string">          detail         text,</span></span><br><span class="line"><span class="string">          price          text,</span></span><br><span class="line"><span class="string">          discount       text,</span></span><br><span class="line"><span class="string">          ebook          text,</span></span><br><span class="line"><span class="string">          star          text,</span></span><br><span class="line"><span class="string">          author          text,</span></span><br><span class="line"><span class="string">          P_time          text,</span></span><br><span class="line"><span class="string">          P_cbs          text);'''</span>)</span><br><span class="line">        print(<span class="string">'Table created successfully'</span>)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        print(<span class="string">"Create table failed"</span>)</span><br><span class="line">    <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">100</span>):</span><br><span class="line">        <span class="keyword">if</span> url.strip():</span><br><span class="line">            url = getOnePage(url)</span><br><span class="line">            print(<span class="string">'----------------------'</span>, x, <span class="string">'------------------------------'</span>)</span><br><span class="line">    conn.close()</span><br></pre></td></tr></table></figure>
+<h4 id="数据截图-2"><a href="#数据截图-2" class="headerlink" title="数据截图"></a>数据截图</h4><p><img src="/2018/08/20/Python静态网页爬虫/dangdang.png" alt=""></p>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>转载请注明出处：</p>
+<script type="text/Javascript"> document.onselectstart=function(e){return false;}; </script>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+          
+            <a href="/tags/爬虫/" rel="tag"><i class="fa fa-tag"></i> 爬虫</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/17/用正交多项式作最小二乘法拟合/" rel="next" title="用正交多项式作最小二乘法拟合">
+                <i class="fa fa-chevron-left"></i> 用正交多项式作最小二乘法拟合
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="Air" />
+            
+              <p class="site-author-name" itemprop="name">Air</p>
+              <p class="site-description motion-element" itemprop="description">行百里者半九十</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Air-TF" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/6202692821" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境"><span class="nav-number">1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原理"><span class="nav-number">2.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实例"><span class="nav-number">3.</span> <span class="nav-text">实例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#爬取爱奇艺视频列表"><span class="nav-number">3.1.</span> <span class="nav-text">爬取爱奇艺视频列表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#源代码"><span class="nav-number">3.1.1.</span> <span class="nav-text">源代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据截图"><span class="nav-number">3.1.2.</span> <span class="nav-text">数据截图</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#爬取优酷视频列表"><span class="nav-number">3.2.</span> <span class="nav-text">爬取优酷视频列表</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#源代码-1"><span class="nav-number">3.2.1.</span> <span class="nav-text">源代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据截图-1"><span class="nav-number">3.2.2.</span> <span class="nav-text">数据截图</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#爬取当当书籍信息"><span class="nav-number">3.3.</span> <span class="nav-text">爬取当当书籍信息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#源代码-2"><span class="nav-number">3.3.1.</span> <span class="nav-text">源代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据截图-2"><span class="nav-number">3.3.2.</span> <span class="nav-text">数据截图</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#说明"><span class="nav-number">4.</span> <span class="nav-text">说明</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Air</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+  <div class="footer-custom">Made with <span> ❤ </span><a target="_blank" style="border:0" href="https://weibo.com/u/5148709268?from=usercardnew&refer_flag=0000020001_&is_all=1">Wong Xueyi</a></div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>

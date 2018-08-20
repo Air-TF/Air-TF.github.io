@@ -167,7 +167,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">记录 分享</p>
+        <p class="site-subtitle">记录·分享</p>
       
   </div>
 
@@ -291,6 +291,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/archives/be5f262c/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/archives/be5f262c/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
@@ -473,6 +483,13 @@ y=S(x)=a^*_0P_0(x)+a^*_1P_1(x)+\cdots+a^*_nP_n(x)</script><h2 id="Delphi实现">
 
 
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
 
   
 
@@ -797,6 +814,43 @@ y=S(x)=a^*_0P_0(x)+a^*_1P_1(x)+\cdots+a^*_nP_n(x)</script><h2 id="Delphi实现">
 
 
 
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'Air-TF',
+            repo: 'Air-TF.github.io',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '2cf09d5472b9d9d9d19be84fa7d1efb059e5af9d',
+            
+                client_id: 'e62ab7748195745c3e27'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
 
 
 

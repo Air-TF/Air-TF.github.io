@@ -83,16 +83,16 @@
 <meta name="keywords" content="MySQL,centOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CentOS 7.4安装Mysql 5.6.22">
-<meta property="og:url" content="http://yoursite.com/2018/08/16/CentOS-7-4安装Mysql-5-6-22/index.html">
+<meta property="og:url" content="http://yoursite.com/archives/e6378baa/index.html">
 <meta property="og:site_name" content="Air">
 <meta property="og:description" content="环境 阿里云CentOS 7.4MySQL 5.6.22  过程查看CentOS自带的mysql1rpm -qa | grep -i mysql  将自带的mysql卸载1rpm –y –nodeps mysqlname 上传Mysql到linux并解压文件12mkdir /usr/local/mysqltar -xvfMySQL-5.6.22-1.el6.i686.rpm-bundle.tar">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2018/08/16/CentOS-7-4安装Mysql-5-6-22/1.png">
-<meta property="og:updated_time" content="2018-08-19T00:30:14.279Z">
+<meta property="og:image" content="https://blog-air.oss-cn-shenzhen.aliyuncs.com/blog/e6378baa/1.png">
+<meta property="og:updated_time" content="2018-08-20T11:12:03.129Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS 7.4安装Mysql 5.6.22">
 <meta name="twitter:description" content="环境 阿里云CentOS 7.4MySQL 5.6.22  过程查看CentOS自带的mysql1rpm -qa | grep -i mysql  将自带的mysql卸载1rpm –y –nodeps mysqlname 上传Mysql到linux并解压文件12mkdir /usr/local/mysqltar -xvfMySQL-5.6.22-1.el6.i686.rpm-bundle.tar">
-<meta name="twitter:image" content="http://yoursite.com/2018/08/16/CentOS-7-4安装Mysql-5-6-22/1.png">
+<meta name="twitter:image" content="https://blog-air.oss-cn-shenzhen.aliyuncs.com/blog/e6378baa/1.png">
 
 
 
@@ -122,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/16/CentOS-7-4安装Mysql-5-6-22/"/>
+  <link rel="canonical" href="http://yoursite.com/archives/e6378baa/"/>
 
 
 
@@ -163,7 +163,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">Notes</p>
+        <p class="site-subtitle">记录 分享</p>
       
   </div>
 
@@ -245,7 +245,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/16/CentOS-7-4安装Mysql-5-6-22/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/archives/e6378baa/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Air">
@@ -321,7 +321,7 @@
 <p>阿里云CentOS 7.4<br>MySQL 5.6.22</p>
 </blockquote>
 <h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><h3 id="查看CentOS自带的mysql"><a href="#查看CentOS自带的mysql" class="headerlink" title="查看CentOS自带的mysql"></a>查看CentOS自带的mysql</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa | grep -i mysql</span><br></pre></td></tr></table></figure>
-<p><img src="/2018/08/16/CentOS-7-4安装Mysql-5-6-22/1.png" alt=""></p>
+<p><img src="https://blog-air.oss-cn-shenzhen.aliyuncs.com/blog/e6378baa/1.png" alt=""></p>
 <h3 id="将自带的mysql卸载"><a href="#将自带的mysql卸载" class="headerlink" title="将自带的mysql卸载"></a>将自带的mysql卸载</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm –y –nodeps mysqlname</span><br></pre></td></tr></table></figure>
 <h3 id="上传Mysql到linux并解压文件"><a href="#上传Mysql到linux并解压文件" class="headerlink" title="上传Mysql到linux并解压文件"></a>上传Mysql到linux并解压文件</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir /usr/local/mysql</span><br><span class="line">tar -xvfMySQL-5.6.22-1.el6.i686.rpm-bundle.tar -C /usr/local/mysql</span><br></pre></td></tr></table></figure>
 <h3 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/mysql</span><br></pre></td></tr></table></figure>
@@ -347,7 +347,9 @@
 <h3 id="开启mysql的远程登录"><a href="#开启mysql的远程登录" class="headerlink" title="开启mysql的远程登录"></a>开启mysql的远程登录</h3><blockquote>
 <p>默认情况下mysql为安全起见，不支持远程登录mysql，所以需要设置开启远程登录mysql的权限</p>
 <blockquote>
+<blockquote>
 <p> 登录mysql后输入如下命令：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">grant all privileges on *.* to'root' @'%' identified by 'root';</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
 </blockquote>
 </blockquote>
 <h3 id="开放Linux的对外访问的端口3306"><a href="#开放Linux的对外访问的端口3306" class="headerlink" title="开放Linux的对外访问的端口3306"></a>开放Linux的对外访问的端口3306</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/sysconfig/iptables</span><br></pre></td></tr></table></figure>
@@ -387,7 +389,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/13/MySQL卸载/" rel="next" title="MySQL卸载">
+              <a href="/archives/b98cdc0b/" rel="next" title="MySQL卸载">
                 <i class="fa fa-chevron-left"></i> MySQL卸载
               </a>
             
@@ -397,7 +399,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/08/17/用正交多项式作最小二乘法拟合/" rel="prev" title="用正交多项式作最小二乘法拟合">
+              <a href="/archives/be5f262c/" rel="prev" title="用正交多项式作最小二乘法拟合">
                 用正交多项式作最小二乘法拟合 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -470,7 +472,7 @@
                 alt="Air" />
             
               <p class="site-author-name" itemprop="name">Air</p>
-              <p class="site-description motion-element" itemprop="description">行百里者半九十</p>
+              <p class="site-description motion-element" itemprop="description">学而不思则罔 思而不学则殆</p>
           </div>
 
           <nav class="site-state motion-element">

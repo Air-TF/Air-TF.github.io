@@ -89,8 +89,8 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://blog-air.oss-cn-shenzhen.aliyuncs.com/blog/de4383da/insertionSort.gif">
 <meta property="og:image" content="https://blog-air.oss-cn-shenzhen.aliyuncs.com/blog/de4383da/InsertSort.png">
-<meta property="og:image" content="d:/workspace/Blog/source/_posts/常见内排序算法/ShellSort.png">
-<meta property="og:updated_time" content="2018-09-03T05:39:56.452Z">
+<meta property="og:image" content="https://blog-air.oss-cn-shenzhen.aliyuncs.com/blog/de4383da/ShellSort.png">
+<meta property="og:updated_time" content="2018-09-03T05:57:05.402Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常见内排序算法">
 <meta name="twitter:description" content="排序是将一个数据元素（或记录）的任意序列，重新排列成一个按关键字有序的序列。分为内排序和外排序两种。内排序是指在排序期间数据对象全部存放在内存的排序。 基于自己对算法的理解，用C++语言简单实现，为方便描述，这里先统一设置数据类型和打印函数。 123456789101112131415161718#include&amp;lt;iostream&amp;gt;using namespace std;#define">
@@ -292,7 +292,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-09-03T13:39:56+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-09-03T13:57:05+08:00">
                 2018-09-03
               </time>
             
@@ -352,7 +352,7 @@
 <h2 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h2><p>希尔排序也是一种插入排序类的方法，但在时间效率上比直接插入排序有较大改进。希尔排序的时间复杂度受所取增量序列影响。</p>
 <h3 id="算法实现-1"><a href="#算法实现-1" class="headerlink" title="算法实现"></a>算法实现</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ShellInsert</span><span class="params">(RedType *arr, <span class="keyword">int</span> length, <span class="keyword">int</span> dk)</span></span>&#123;</span><br><span class="line">	RedType temp; <span class="comment">//暂存单元</span></span><br><span class="line">	<span class="keyword">int</span> i, j;</span><br><span class="line">	<span class="keyword">for</span> (i = dk; i &lt; length; ++i)&#123;</span><br><span class="line">		<span class="keyword">if</span> (arr[i].key &lt; arr[i - dk].key)&#123;</span><br><span class="line">			temp = arr[i];</span><br><span class="line">			arr[i] = arr[i - dk];</span><br><span class="line">			<span class="keyword">for</span> (j = i - dk; (temp.key &lt; arr[j - dk].key) &amp;&amp; (j &gt; <span class="number">0</span>); j -= dk)</span><br><span class="line">				arr[j] = arr[j - dk];</span><br><span class="line">			arr[j] = temp;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//printf("(%d,%d)   ", temp.key, temp.otherinfo);</span></span><br><span class="line">		print(arr, length);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ShellSort</span><span class="params">(RedType *arr, <span class="keyword">int</span> length, <span class="keyword">int</span> *dk,<span class="keyword">int</span> dk_length)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; dk_length; i++)&#123;</span><br><span class="line">		ShellInsert(arr, length, dk[i]);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"\n第%d趟排序结果：\n"</span>,i+<span class="number">1</span>);</span><br><span class="line">		print(arr, length);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="算法测试-1"><a href="#算法测试-1" class="headerlink" title="算法测试"></a>算法测试</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	RedType orgArr[N] = &#123; &#123; <span class="number">49</span>, <span class="number">1</span> &#125;, &#123; <span class="number">38</span>, <span class="number">2</span> &#125;, &#123; <span class="number">65</span>, <span class="number">3</span> &#125;, &#123; <span class="number">97</span>, <span class="number">4</span> &#125;, &#123; <span class="number">76</span>, <span class="number">5</span> &#125;, &#123; <span class="number">13</span>, <span class="number">6</span> &#125;, &#123; <span class="number">27</span>, <span class="number">7</span> &#125;, &#123; <span class="number">49</span>, <span class="number">8</span> &#125;, &#123; <span class="number">35</span>, <span class="number">9</span> &#125;, &#123; <span class="number">54</span>, <span class="number">10</span> &#125; &#125;;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"排序前:\n"</span>);</span><br><span class="line">	print(orgArr,N);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">	<span class="keyword">int</span> dt[<span class="number">3</span>] = &#123; <span class="number">5</span>, <span class="number">3</span>, <span class="number">1</span> &#125;; <span class="comment">// 增量序列数组 </span></span><br><span class="line">	ShellSort(orgArr, N, dt, <span class="number">3</span>);</span><br><span class="line">	getchar();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="D:\workspace\Blog\source\_posts\常见内排序算法\ShellSort.png" alt=""></p>
+<p><img src="https://blog-air.oss-cn-shenzhen.aliyuncs.com/blog/de4383da/ShellSort.png" alt=""></p>
 <h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><h2 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h2><h2 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h2><h2 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h2><h2 id="各种内排序方法比较"><a href="#各种内排序方法比较" class="headerlink" title="各种内排序方法比较"></a>各种内排序方法比较</h2><div class="table-container">
 <table>
 <thead>
@@ -828,7 +828,7 @@
         renderGitment();
       }
       
-      </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+      </script>
     
 
 
@@ -853,6 +853,26 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 

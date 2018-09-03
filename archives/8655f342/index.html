@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Air">
 <meta property="og:description" content="常用git命令 参考资料中有详细介绍，这里不做展开  搭建git服务器联合开发中，有些商业代码不想公开，又不舍得给GitHub等公司交钱，就只能自己搭建一台Git服务器作为私有仓库使用   环境说明  阿里云 CentOS 7.4 git  1.8.3.1   安装git先查看系统是否安装有git 1git --version 如果系统没有安装，则安装 1yum install git -y 创建">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-24T10:11:47.271Z">
+<meta property="og:updated_time" content="2018-09-02T16:03:54.087Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git使用总结">
 <meta name="twitter:description" content="常用git命令 参考资料中有详细介绍，这里不做展开  搭建git服务器联合开发中，有些商业代码不想公开，又不舍得给GitHub等公司交钱，就只能自己搭建一台Git服务器作为私有仓库使用   环境说明  阿里云 CentOS 7.4 git  1.8.3.1   安装git先查看系统是否安装有git 1git --version 如果系统没有安装，则安装 1yum install git -y 创建">
@@ -288,8 +288,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-08-24T18:11:47+08:00">
-                2018-08-24
+              <time title="更新于" itemprop="dateModified" datetime="2018-09-03T00:03:54+08:00">
+                2018-09-03
               </time>
             
           </span>
@@ -375,7 +375,7 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd /home</span><br><span class="line">mkdir gitrepo</span><br><span class="line">chown git:git gitrepo/</span><br><span class="line">cd gitrepo</span><br><span class="line">git init --bare test.git</span><br></pre></td></tr></table></figure>
 <p>以上命令Git创建一个空仓库，服务器上的Git仓库通常都以<code>.git</code>结尾。然后，把仓库所属用户改为<code>git</code>： </p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown -R git:git test.git</span><br></pre></td></tr></table></figure>
-<h3 id="禁用shell登录"><a href="#禁用shell登录" class="headerlink" title="禁用shell登录"></a>禁用shell登录</h3><p>出于安全考虑，创建的git用户不允许登录shell，这可以通过编辑<code>/etc/passwd</code>文件完成。找到类似下面的一行：</p>
+<h3 id="禁用shell登录"><a href="#禁用shell登录" class="headerlink" title="禁用shell登录"></a>禁用shell登录</h3><p>出于安全考虑，创建的git用户不允许登录shell，可以通过编辑<code>/etc/passwd</code>文件完成。找到类似下面的一行：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git:x:1000:1000::/home/git:/bin/bash</span><br></pre></td></tr></table></figure>
 <p>改为：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git:x:1000:1000::/home/git:/usr/bin/git-shell</span><br></pre></td></tr></table></figure>

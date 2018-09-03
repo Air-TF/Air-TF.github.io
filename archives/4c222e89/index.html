@@ -79,13 +79,13 @@
 
 
 
-<meta name="description" content="环境 WIndows 10 PyCharm 2018.2 Python 3.6  原理简单静态网页爬取过程都是大同小异的，主要有以下几个步骤  分析源码，对有效信息进行定位 用BeautifulSoup获取有效信息 用正则表达式提取信息 将信息保存到数据库  实例静态网站爬取关键在于找到要爬取内容的特征。多开几个网页，计较一下就能大致获得要爬数据的特征。下面以爬取爱奇艺视频列表为例简单讲述一下过程">
+<meta name="description" content="环境 WIndows 10 PyCharm 2018.2 Python 3.6  原理简单静态网页爬取过程都是大同小异的，主要有以下几个步骤  分析源码，对有效信息进行定位 用BeautifulSoup获取有效信息 用正则表达式提取信息 将信息保存到数据库  实例静态网站爬取关键在于找到要爬取内容的特征。多开几个网页，比较一下，就能大致获得数据的特征。下面以爬取爱奇艺视频列表为例简单讲述一下过程，">
 <meta name="keywords" content="Python,爬虫">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python静态网页爬虫">
 <meta property="og:url" content="http://yoursite.com/archives/4c222e89/index.html">
 <meta property="og:site_name" content="Air">
-<meta property="og:description" content="环境 WIndows 10 PyCharm 2018.2 Python 3.6  原理简单静态网页爬取过程都是大同小异的，主要有以下几个步骤  分析源码，对有效信息进行定位 用BeautifulSoup获取有效信息 用正则表达式提取信息 将信息保存到数据库  实例静态网站爬取关键在于找到要爬取内容的特征。多开几个网页，计较一下就能大致获得要爬数据的特征。下面以爬取爱奇艺视频列表为例简单讲述一下过程">
+<meta property="og:description" content="环境 WIndows 10 PyCharm 2018.2 Python 3.6  原理简单静态网页爬取过程都是大同小异的，主要有以下几个步骤  分析源码，对有效信息进行定位 用BeautifulSoup获取有效信息 用正则表达式提取信息 将信息保存到数据库  实例静态网站爬取关键在于找到要爬取内容的特征。多开几个网页，比较一下，就能大致获得数据的特征。下面以爬取爱奇艺视频列表为例简单讲述一下过程，">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://blog-air.oss-cn-shenzhen.aliyuncs.com/blog/4c222e89/step0.png">
 <meta property="og:image" content="https://blog-air.oss-cn-shenzhen.aliyuncs.com/blog/4c222e89/step1.png">
@@ -94,10 +94,10 @@
 <meta property="og:image" content="https://blog-air.oss-cn-shenzhen.aliyuncs.com/blog/4c222e89/aiqiyi.png">
 <meta property="og:image" content="https://blog-air.oss-cn-shenzhen.aliyuncs.com/blog/4c222e89/youku.png">
 <meta property="og:image" content="https://blog-air.oss-cn-shenzhen.aliyuncs.com/blog/4c222e89/dangdang.png">
-<meta property="og:updated_time" content="2018-09-01T06:39:46.200Z">
+<meta property="og:updated_time" content="2018-09-02T16:00:09.560Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python静态网页爬虫">
-<meta name="twitter:description" content="环境 WIndows 10 PyCharm 2018.2 Python 3.6  原理简单静态网页爬取过程都是大同小异的，主要有以下几个步骤  分析源码，对有效信息进行定位 用BeautifulSoup获取有效信息 用正则表达式提取信息 将信息保存到数据库  实例静态网站爬取关键在于找到要爬取内容的特征。多开几个网页，计较一下就能大致获得要爬数据的特征。下面以爬取爱奇艺视频列表为例简单讲述一下过程">
+<meta name="twitter:description" content="环境 WIndows 10 PyCharm 2018.2 Python 3.6  原理简单静态网页爬取过程都是大同小异的，主要有以下几个步骤  分析源码，对有效信息进行定位 用BeautifulSoup获取有效信息 用正则表达式提取信息 将信息保存到数据库  实例静态网站爬取关键在于找到要爬取内容的特征。多开几个网页，比较一下，就能大致获得数据的特征。下面以爬取爱奇艺视频列表为例简单讲述一下过程，">
 <meta name="twitter:image" content="https://blog-air.oss-cn-shenzhen.aliyuncs.com/blog/4c222e89/step0.png">
 
 
@@ -296,8 +296,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-09-01T14:39:46+08:00">
-                2018-09-01
+              <time title="更新于" itemprop="dateModified" datetime="2018-09-03T00:00:09+08:00">
+                2018-09-03
               </time>
             
           </span>
@@ -357,7 +357,7 @@
 <li>用<a href="http://www.runoob.com/python3/python3-reg-expressions.html" target="_blank" rel="noopener">正则表达式</a>提取信息</li>
 <li>将信息保存到数据库</li>
 </ul>
-<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>静态网站爬取关键在于找到要爬取内容的特征。多开几个网页，计较一下就能大致获得要爬数据的特征。下面以爬取爱奇艺视频列表为例简单讲述一下过程。</p>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>静态网站爬取关键在于找到要爬取内容的特征。多开几个网页，比较一下，就能大致获得数据的特征。下面以爬取爱奇艺视频列表为例简单讲述一下过程，并贴出爬取优酷视频列表和当当书籍数据信息代码作为参考。</p>
 <h3 id="爬取爱奇艺视频列表"><a href="#爬取爱奇艺视频列表" class="headerlink" title="爬取爱奇艺视频列表"></a>爬取爱奇艺视频列表</h3><p>首先我们打开<a href="http://list.iqiyi.com/www/1/-------------24-1-1-iqiyi--.html" target="_blank" rel="noopener">爱奇艺电影排行榜</a>，用浏览器<code>Devtools</code>的元素选择器定位到要爬取的信息。Chrome快捷键<code>Ctrl+Shift+C</code></p>
 <p><img src="https://blog-air.oss-cn-shenzhen.aliyuncs.com/blog/4c222e89/step0.png" alt=""></p>
 <p>可以看到我们要爬取的列表位置为<code>div.wrapper-piclist &gt; ul</code> </p>
@@ -373,9 +373,9 @@
 <li>通过<code>requests</code>获得网页源码</li>
 <li><code>time.sleep(random.randint(3, 5))</code>设置3~5秒休息时间，防止IP被封</li>
 <li>用<code>BeautifulSoup</code>定位并获取元素信息</li>
-<li>如果只想获取元素信息中的部分内容，用<code>re</code>正则表达式筛选。</li>
+<li>如果只想获取元素内容中的部分信息，用<code>re</code>正则表达式筛选。</li>
 <li>将数据存入数据库。</li>
-<li>上述步骤没有问题就将获取一页数据的代码封装成函数，循环爬取所有列表</li>
+<li>若上述步骤没有问题就将获取一页数据的代码封装成函数，循环爬取所有列表</li>
 </ul>
 <p><strong>注意</strong>：</p>
 <p>爬取过程中可能有部分数据是有问题的，比如有些没有主演信息、有些没有评分。</p>

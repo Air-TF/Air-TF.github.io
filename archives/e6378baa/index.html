@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="环境 阿里云CentOS 7.4MySQL 5.6.22  过程查看CentOS自带的mysql1rpm -qa | grep -i mysql  将自带的mysql卸载1rpm –y –nodeps mysqlname 上传Mysql到linux并解压文件12mkdir /usr/local/mysqltar -xvfMySQL-5.6.22-1.el6.i686.rpm-bundle.tar">
+<meta name="description" content="环境 阿里云CentOS 7.4MySQL 5.6.22  过程查看CentOS自带的MySQL1rpm -qa | grep -i mysql  将自带的MySQL卸载1rpm –y –nodeps mysqlname 上传MySQL到Linux并解压文件12mkdir /usr/local/mysqltar -xvf MySQL-5.6.22-1.el6.i686.rpm-bundle.tar">
 <meta name="keywords" content="MySQL,centOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CentOS安装MySQL">
 <meta property="og:url" content="http://yoursite.com/archives/e6378baa/index.html">
 <meta property="og:site_name" content="Air">
-<meta property="og:description" content="环境 阿里云CentOS 7.4MySQL 5.6.22  过程查看CentOS自带的mysql1rpm -qa | grep -i mysql  将自带的mysql卸载1rpm –y –nodeps mysqlname 上传Mysql到linux并解压文件12mkdir /usr/local/mysqltar -xvfMySQL-5.6.22-1.el6.i686.rpm-bundle.tar">
+<meta property="og:description" content="环境 阿里云CentOS 7.4MySQL 5.6.22  过程查看CentOS自带的MySQL1rpm -qa | grep -i mysql  将自带的MySQL卸载1rpm –y –nodeps mysqlname 上传MySQL到Linux并解压文件12mkdir /usr/local/mysqltar -xvf MySQL-5.6.22-1.el6.i686.rpm-bundle.tar">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://blog-air.oss-cn-shenzhen.aliyuncs.com/blog/e6378baa/1.png">
-<meta property="og:updated_time" content="2019-01-16T08:32:35.639Z">
+<meta property="og:updated_time" content="2019-04-02T14:18:30.826Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS安装MySQL">
-<meta name="twitter:description" content="环境 阿里云CentOS 7.4MySQL 5.6.22  过程查看CentOS自带的mysql1rpm -qa | grep -i mysql  将自带的mysql卸载1rpm –y –nodeps mysqlname 上传Mysql到linux并解压文件12mkdir /usr/local/mysqltar -xvfMySQL-5.6.22-1.el6.i686.rpm-bundle.tar">
+<meta name="twitter:description" content="环境 阿里云CentOS 7.4MySQL 5.6.22  过程查看CentOS自带的MySQL1rpm -qa | grep -i mysql  将自带的MySQL卸载1rpm –y –nodeps mysqlname 上传MySQL到Linux并解压文件12mkdir /usr/local/mysqltar -xvf MySQL-5.6.22-1.el6.i686.rpm-bundle.tar">
 <meta name="twitter:image" content="https://blog-air.oss-cn-shenzhen.aliyuncs.com/blog/e6378baa/1.png">
 
 
@@ -290,8 +290,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-01-16T16:32:35+08:00">
-                2019-01-16
+              <time title="更新于" itemprop="dateModified" datetime="2019-04-02T22:18:30+08:00">
+                2019-04-02
               </time>
             
           </span>
@@ -337,34 +337,34 @@
         <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><blockquote>
 <p>阿里云CentOS 7.4<br>MySQL 5.6.22</p>
 </blockquote>
-<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><h3 id="查看CentOS自带的mysql"><a href="#查看CentOS自带的mysql" class="headerlink" title="查看CentOS自带的mysql"></a>查看CentOS自带的mysql</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa | grep -i mysql</span><br></pre></td></tr></table></figure>
+<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><h3 id="查看CentOS自带的MySQL"><a href="#查看CentOS自带的MySQL" class="headerlink" title="查看CentOS自带的MySQL"></a>查看CentOS自带的MySQL</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa | grep -i mysql</span><br></pre></td></tr></table></figure>
 <p><img src="https://blog-air.oss-cn-shenzhen.aliyuncs.com/blog/e6378baa/1.png" alt=""></p>
-<h3 id="将自带的mysql卸载"><a href="#将自带的mysql卸载" class="headerlink" title="将自带的mysql卸载"></a>将自带的mysql卸载</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm –y –nodeps mysqlname</span><br></pre></td></tr></table></figure>
-<h3 id="上传Mysql到linux并解压文件"><a href="#上传Mysql到linux并解压文件" class="headerlink" title="上传Mysql到linux并解压文件"></a>上传Mysql到linux并解压文件</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir /usr/local/mysql</span><br><span class="line">tar -xvfMySQL-5.6.22-1.el6.i686.rpm-bundle.tar -C /usr/local/mysql</span><br></pre></td></tr></table></figure>
-<h3 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/mysql</span><br></pre></td></tr></table></figure>
+<h3 id="将自带的MySQL卸载"><a href="#将自带的MySQL卸载" class="headerlink" title="将自带的MySQL卸载"></a>将自带的MySQL卸载</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm –y –nodeps mysqlname</span><br></pre></td></tr></table></figure>
+<h3 id="上传MySQL到Linux并解压文件"><a href="#上传MySQL到Linux并解压文件" class="headerlink" title="上传MySQL到Linux并解压文件"></a>上传MySQL到Linux并解压文件</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir /usr/local/mysql</span><br><span class="line">tar -xvf MySQL-5.6.22-1.el6.i686.rpm-bundle.tar -C /usr/local/mysql</span><br></pre></td></tr></table></figure>
+<h3 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装MySQL</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/mysql</span><br></pre></td></tr></table></figure>
 <p>安装服务器端：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh MySQL-server-5.6.22-1.el6.i686.rpm</span><br></pre></td></tr></table></figure>
 <p>安装客户端： </p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh MySQL-client-5.6.22-1.el6.i686.rpm</span><br></pre></td></tr></table></figure>
 <p>安装过程中可能会出现 <em>File $\cdots$ conflicts with file from package mariadb-libs-1:5.5.41-2.el7_0.x86_64</em> 问题 </p>
 <blockquote>
-<p>原因：CentOS7之后的版本，自带的DBMS mariadb 与安装的mysql产生冲突 </p>
-<p>解决方案：删除 mariadb<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum remove mysql-libs*</span><br></pre></td></tr></table></figure></p>
+<p>原因：CentOS7之后的版本，自带的DBMS <code>mariadb</code>与安装的MySQL产生冲突 </p>
+<p>解决方案：删除 <code>mariadb</code><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum remove mysql-libs*</span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<h3 id="启动mysql"><a href="#启动mysql" class="headerlink" title="启动mysql"></a>启动mysql</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service mysql start</span><br></pre></td></tr></table></figure>
-<h3 id="将mysql加到系统服务中并设置开机启动"><a href="#将mysql加到系统服务中并设置开机启动" class="headerlink" title="将mysql加到系统服务中并设置开机启动"></a>将mysql加到系统服务中并设置开机启动</h3><p>加入到系统服务： </p>
+<h3 id="启动MySQL"><a href="#启动MySQL" class="headerlink" title="启动MySQL"></a>启动MySQL</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service mysql start</span><br></pre></td></tr></table></figure>
+<h3 id="将MySQL加到系统服务中并设置开机启动"><a href="#将MySQL加到系统服务中并设置开机启动" class="headerlink" title="将MySQL加到系统服务中并设置开机启动"></a>将MySQL加到系统服务中并设置开机启动</h3><p>加入到系统服务： </p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chkconfig --addmysql</span><br></pre></td></tr></table></figure>
 <p>自动启动： </p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chkconfig mysql on</span><br></pre></td></tr></table></figure>
-<h3 id="登录mysql"><a href="#登录mysql" class="headerlink" title="登录mysql"></a>登录mysql</h3><blockquote>
-<p>mysql安装好后会生成一个临时随机密码，存储位置在/root/.mysql_secret,如果没有该文件则初始密码为空。 </p>
+<h3 id="登录MySQL"><a href="#登录MySQL" class="headerlink" title="登录MySQL"></a>登录MySQL</h3><blockquote>
+<p>MySQL安装好后会生成一个临时随机密码，存储位置在<code>/root/.mysql_secret</code>,如果没有该文件则初始密码为空。 </p>
 </blockquote>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msyql –u root -p</span><br></pre></td></tr></table></figure>
-<h3 id="修改mysql的密码"><a href="#修改mysql的密码" class="headerlink" title="修改mysql的密码"></a>修改mysql的密码</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set password = password('root');</span><br></pre></td></tr></table></figure>
-<h3 id="开启mysql的远程登录"><a href="#开启mysql的远程登录" class="headerlink" title="开启mysql的远程登录"></a>开启mysql的远程登录</h3><blockquote>
-<p>默认情况下mysql为安全起见，不支持远程登录mysql，所以需要设置开启远程登录mysql的权限</p>
+<h3 id="修改MySQL的密码"><a href="#修改MySQL的密码" class="headerlink" title="修改MySQL的密码"></a>修改MySQL的密码</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set password = password('root');</span><br></pre></td></tr></table></figure>
+<h3 id="开启MySQL的远程登录"><a href="#开启MySQL的远程登录" class="headerlink" title="开启MySQL的远程登录"></a>开启MySQL的远程登录</h3><blockquote>
+<p>默认情况下MySQL为安全起见，不支持远程登录MySQL，所以需要设置开启远程登录MySQL的权限</p>
 <blockquote>
-<p>登录mysql后输入如下命令：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">grant all privileges on *.* to'root' @'%' identified by 'root';</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure></p>
+<p>登录MySQL后输入如下命令：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">grant all privileges on *.* to'root' @'%' identified by 'root';</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 </blockquote>
 <h3 id="开放Linux的对外访问的端口3306"><a href="#开放Linux的对外访问的端口3306" class="headerlink" title="开放Linux的对外访问的端口3306"></a>开放Linux的对外访问的端口3306</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/sysconfig/iptables</span><br></pre></td></tr></table></figure>
@@ -567,7 +567,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境"><span class="nav-number">1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过程"><span class="nav-number">2.</span> <span class="nav-text">过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看CentOS自带的mysql"><span class="nav-number">2.1.</span> <span class="nav-text">查看CentOS自带的mysql</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将自带的mysql卸载"><span class="nav-number">2.2.</span> <span class="nav-text">将自带的mysql卸载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上传Mysql到linux并解压文件"><span class="nav-number">2.3.</span> <span class="nav-text">上传Mysql到linux并解压文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装mysql"><span class="nav-number">2.4.</span> <span class="nav-text">安装mysql</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动mysql"><span class="nav-number">2.5.</span> <span class="nav-text">启动mysql</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将mysql加到系统服务中并设置开机启动"><span class="nav-number">2.6.</span> <span class="nav-text">将mysql加到系统服务中并设置开机启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#登录mysql"><span class="nav-number">2.7.</span> <span class="nav-text">登录mysql</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改mysql的密码"><span class="nav-number">2.8.</span> <span class="nav-text">修改mysql的密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开启mysql的远程登录"><span class="nav-number">2.9.</span> <span class="nav-text">开启mysql的远程登录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开放Linux的对外访问的端口3306"><span class="nav-number">2.10.</span> <span class="nav-text">开放Linux的对外访问的端口3306</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重启服务器"><span class="nav-number">2.11.</span> <span class="nav-text">重启服务器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文献"><span class="nav-number">3.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境"><span class="nav-number">1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过程"><span class="nav-number">2.</span> <span class="nav-text">过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看CentOS自带的MySQL"><span class="nav-number">2.1.</span> <span class="nav-text">查看CentOS自带的MySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将自带的MySQL卸载"><span class="nav-number">2.2.</span> <span class="nav-text">将自带的MySQL卸载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上传MySQL到Linux并解压文件"><span class="nav-number">2.3.</span> <span class="nav-text">上传MySQL到Linux并解压文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装MySQL"><span class="nav-number">2.4.</span> <span class="nav-text">安装MySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动MySQL"><span class="nav-number">2.5.</span> <span class="nav-text">启动MySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将MySQL加到系统服务中并设置开机启动"><span class="nav-number">2.6.</span> <span class="nav-text">将MySQL加到系统服务中并设置开机启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#登录MySQL"><span class="nav-number">2.7.</span> <span class="nav-text">登录MySQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改MySQL的密码"><span class="nav-number">2.8.</span> <span class="nav-text">修改MySQL的密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开启MySQL的远程登录"><span class="nav-number">2.9.</span> <span class="nav-text">开启MySQL的远程登录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开放Linux的对外访问的端口3306"><span class="nav-number">2.10.</span> <span class="nav-text">开放Linux的对外访问的端口3306</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重启服务器"><span class="nav-number">2.11.</span> <span class="nav-text">重启服务器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文献"><span class="nav-number">3.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
             
 
           </div>
